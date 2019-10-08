@@ -99,7 +99,7 @@ Then I got the following summary information:
     Number of testing examples : 12630
     Number of validation examples : 4410
     Image shape is: (32 32, 3)
-    Number of classes labels : 43
+    Number of the label class : 43
 
 After the summary section I read and printed the segmentation.csv file with help of the panadas library.
 
