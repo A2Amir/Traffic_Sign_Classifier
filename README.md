@@ -64,7 +64,7 @@ The steps of this project are the following:
 # Load pickled data
 import pickle
 
-
+#  Fill this in based on where you saved the training, validation and testing data
 training_file = '../data/train.p'
 validation_file='../data/valid.p'
 testing_file = '../data/test.p'
