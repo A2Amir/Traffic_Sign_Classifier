@@ -51,7 +51,7 @@ The steps of this project are the following:
 ### Here I will describe how I addressed each step in my implementation.  
 
 
-#### 1. Since the dataset is a pickled data that has a dictionary with 4 key pairs, I will use the Pickle Library to load data:
+#### 1. Load the data set: Since the dataset is a pickled data that has a dictionary with 4 key pairs, I will use the Pickle Library to load data:
 
   
 * 'features' is a 4D array containing raw pixel data of the traffic sign images, (num examples, width, height, channels).
