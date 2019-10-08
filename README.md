@@ -51,7 +51,17 @@ The steps of this project are the following:
 ### Here I will describe how I addressed each step in my implementation.  
 
 
-#### 1. Because our dataset is a To Load the data set Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+#### 1. Since the dataset is a pickled data that has a dictionary with 4 key pairs, I will use the Pickle Library to load data:
+
+  
+* 'features' is a 4D array containing raw pixel data of the traffic sign images, (num examples, width, height, channels).
+* 'labels' is a 1D array containing the label/class id of the traffic sign. The file signnames.csv contains id -> name mappings for each id.
+* 'sizes' is a list containing tuples, (width, height) representing the original width and height the image.
+* 'coords' is a list containing tuples, (x1, y1, x2, y2) representing coordinates of a bounding box around the sign in the image.(THESE COORDINATES ASSUME THE ORIGINAL IMAGE. THE PICKLED DATA CONTAINS RESIZED VERSIONS (32 by 32) OF THESE IMAGES)
+
+
+
+
 
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
