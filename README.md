@@ -60,7 +60,25 @@ The steps of this project are the following:
 * 'coords' is a list containing tuples, (x1, y1, x2, y2) representing coordinates of a bounding box around the sign in the image.(Notice: THESE COORDINATES ASSUME THE ORIGINAL IMAGE. THE PICKLED DATA CONTAINS RESIZED VERSIONS (32 by 32) OF THESE IMAGES)
 
 
+```python
+# Load pickled data
+import pickle
 
+
+training_file = '../data/train.p'
+validation_file='../data/valid.p'
+testing_file = '../data/test.p'
+
+with open(training_file,mode='rb') as f:
+    train=pickle.load(f)
+with open(validation_file,mode='rb') as f:
+    valid=pickle.load(f)
+with open(testing_file,mode='rb') as f:
+    test=pickle.load(f)
+x_train,y_train=train['features'],train['labels']
+x_valid,y_valid=valid['features'],valid['labels']
+x_test,y_test=test['features'],test['labels']
+```
 
 
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
