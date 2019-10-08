@@ -48,10 +48,10 @@ The steps of this project are the following:
 
 ## Rubric Points
 
-### Here I will describe how I addressed each point in my implementation.  
+### Here I will describe how I addressed each step in my implementation.  
 
 
-
+#### 1. Because our dataset is a To Load the data set Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
