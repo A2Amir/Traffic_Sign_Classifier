@@ -81,16 +81,13 @@ x_test,y_test=test['features'],test['labels']
 ```
 
 
-#### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
-
-
+#### 1. Explore, summarize and visualize the data set: it is provided a basic summary of the data set.
 
 After loading the dataset, I asserted weathers the numbers of the training images and labels are equal or not.
 
     assert(len(x_train)==len(y_train))
     assert(len(x_valid)==len(y_valid))
     assert(len(x_test)==len(y_test))
-
 
 
 Then I got the following summary information:
@@ -100,15 +97,16 @@ Then I got the following summary information:
     Number of validation examples : 4410
     Image shape is: (32 32, 3)
     Number of the label class : 43
+    
+After the summary section, the file segmentation.csv, which has the corresponding sign name for each class number, was read and printed via the Panadas library.
 
-After the summary section I read and printed the segmentation.csv file with help of the panadas library.
-
-    ClassId 	SignName
-    0 	Speed limit (20km/h)
-    1 	Speed limit (30km/h)
-    2 	Speed limit (50km/h)
-    3 	Speed limit (60km/h)
-    4 	Speed limit (70km/h)
+    |ClassId | 	SignName |
+    ___________________________
+    |0 |	Speed limit (20km/h)|
+    |1 |	Speed limit (30km/h)|
+    |2 |	Speed limit (50km/h)|
+    |3 |	Speed limit (60km/h)|
+    |4 |	Speed limit (70km/h)|
     
 
 
