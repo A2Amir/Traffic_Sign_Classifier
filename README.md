@@ -100,13 +100,13 @@ Then I got the following summary information:
     
 After the summary section, the file segmentation.csv, which has the corresponding sign name for each class number, was read and printed via the Panadas library.
 
-    |ClassId | 	SignName |
-    ___________________________
-    |0 |	Speed limit (20km/h)|
-    |1 |	Speed limit (30km/h)|
-    |2 |	Speed limit (50km/h)|
-    |3 |	Speed limit (60km/h)|
-    |4 |	Speed limit (70km/h)|
+  |ClassId | 	SignName |
+  |---------|-------------|
+  |0 |	Speed limit (20km/h)|
+  |1 |	Speed limit (30km/h)|
+  |2 |	Speed limit (50km/h)|
+  |3 |	Speed limit (60km/h)|
+  |4 |	Speed limit (70km/h)|
     
 
 
