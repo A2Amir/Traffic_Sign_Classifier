@@ -180,9 +180,16 @@ The process I did to find the final model architecture was related to the accura
 <p align="center">
 <p align="center">
 
+For visualizing the model architecture, I tried to open the tensorboard environment (tensorboard --logdir=" the adress of log dir " --port 6006) and I got the below presented graph.
 
-For visualizing the model architecture, I tried to open the tensorboard environment in the Udacity's workspace (tensorboard --logdir=logs) but I got many errors.
 
+<p align="center">
+<img src="./examples/6.png" alt=" the inception module" />
+<p align="center">  
+  The inception module
+<p align="center">
+<p align="center">
+  
     Layer 	Description 	Input 	Output
     Inception with batch_normalization and relu  activation 	Inception3a 	(?,32,32,3) 	(?, 32, 32, 256)
     Inception with batch_normalization and relu  activation 	Inception3b 	(?,32,32,256) 	(?, 32, 32, 480)
