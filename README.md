@@ -1,15 +1,14 @@
 # **Traffic Sign Recognition** 
 
-In this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. You will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
+In this project, I will use deep neural networks and convolutional neural networks to classify traffic signs. We will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
 ---
 
 **Build a Traffic Sign Recognition Project**
 
-The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
+The steps of this project are the following:
+* Load the data set 
 * Explore, summarize and visualize the data set
 * Design, train and test a model architecture
 * Use the model to make predictions on new images
@@ -48,20 +47,41 @@ The goals / steps of this project are the following:
 
 
 ## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
----
-### Writeup / README
-
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
-
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
-
-### Data Set Summary & Exploration
-
-#### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+### Here I will describe how I addressed each step in my implementation.  
 
 
+#### 1. Load the data set: Since the dataset is a pickled data that has a dictionary with 4 key pairs, I will use the Pickle Library to load data:
+
+  
+* 'features' is a 4D array containing raw pixel data of the traffic sign images, (num examples, width, height, channels).
+* 'labels' is a 1D array containing the label/class id of the traffic sign. The file signnames.csv contains id -> name mappings for each id.
+* 'sizes' is a list containing tuples, (width, height) representing the original width and height the image.
+* 'coords' is a list containing tuples, (x1, y1, x2, y2) representing coordinates of a bounding box around the sign in the image.(Notice: THESE COORDINATES ASSUME THE ORIGINAL IMAGE. THE PICKLED DATA CONTAINS RESIZED VERSIONS (32 by 32) OF THESE IMAGES)
+
+
+```python
+# Load pickled data
+import pickle
+
+#  Fill this in based on where you saved the training, validation and testing data
+training_file = '../data/train.p'
+validation_file='../data/valid.p'
+testing_file = '../data/test.p'
+
+with open(training_file,mode='rb') as f:
+    train=pickle.load(f)
+with open(validation_file,mode='rb') as f:
+    valid=pickle.load(f)
+with open(testing_file,mode='rb') as f:
+    test=pickle.load(f)
+x_train,y_train=train['features'],train['labels']
+x_valid,y_valid=valid['features'],valid['labels']
+x_test,y_test=test['features'],test['labels']
+```
+
+
+#### 2. Explore, summarize and visualize the data set: Below is a basic summary of the dataset provided.
 
 After loading the dataset, I asserted weathers the numbers of the training images and labels are equal or not.
 
@@ -70,24 +90,26 @@ After loading the dataset, I asserted weathers the numbers of the training image
     assert(len(x_test)==len(y_test))
 
 
-
 Then I got the following summary information:
 
     Number of training examples : 34799
     Number of testing examples : 12630
     Number of validation examples : 4410
     Image shape is: (32 32, 3)
-    Number of classes labels : 43
-
-After the summary section I read and printed the segmentation.csv file with help of the panadas library.
-
-    ClassId 	SignName
-    0 	Speed limit (20km/h)
-    1 	Speed limit (30km/h)
-    2 	Speed limit (50km/h)
-    3 	Speed limit (60km/h)
-    4 	Speed limit (70km/h)
+    Number of the label class : 43
     
+After the summary section, the file segmentation.csv, which has the corresponding sign name for each class number, was read and printed via the Panadas library.
+
+  |ClassId | 	SignName |
+  |---------|-------------|
+  |0 |	Speed limit (20km/h)|
+  |1 |	Speed limit (30km/h)|
+  |2 |	Speed limit (50km/h)|
+  |3 |	Speed limit (60km/h)|
+  |4 |	Speed limit (70km/h)|
+  |5 | 	Speed limit (80km/h)|
+  |6 |	End of speed limit (80km/h)|
+  |7 | 	Speed limit (100km/h)|
 
 
 #### 2. Include an exploratory visualization of the dataset.
