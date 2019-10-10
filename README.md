@@ -120,22 +120,21 @@ Below is shown some images from the dataset with the coressponding titles:
 I was encouraged to to print several images for one label and try to pay attention how the images look like. This is important because I need to know the characteristics of the images that use for training the model
 ![alt text][image2]
 
-* As seen ,the contrast of  images is bad which must be imporved.
+* As seen,the contrast of  images is bad which must be imporved.
 
 
 
 #### 2. Pre-processing of the dataset:
 
-##### Distribution
 
-First, I will examine the distribution of the labels and look at the comparative distribution of each individual class in training, validation, and test data set.
+Distribution:First, I will examine the distribution of the labels and look at the comparative distribution of each individual class in the training, validation, and test data set.
 
 ![alt text][image3]
 
 
 
     
-Then I used the pandas library to find the number of the maximum and minimum traffic signs class in the training , validation and test dataset:
+Then I used the pandas library to find the number of  maximum and minimum traffic sign class in the training , validation and test dataset:
 
 |  Datset  |                             The maximum sign         |        Number      |           the minimum sign  |     Number|
 |--- |------------------------------------------------------|---------------------|----------------------------|-----------|
