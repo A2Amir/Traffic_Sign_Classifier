@@ -23,7 +23,7 @@ The steps of this project are the following:
 [image2]:  ./examples/2.png "The characteristics of the images"
 [image3]: ./examples/3.png "Distribuation"
 [image4]: ./examples/4.png "Imporving the contrast of all images "
-[image5]: ./examples/5.png "Data Augmnetation "
+[image5]: ./examples/5.PNG "Data Augmnetation "
 
 
 [image5]: ./examples/S5.png "Traffic Sign 1"
