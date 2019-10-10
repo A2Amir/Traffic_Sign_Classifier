@@ -22,7 +22,7 @@ The steps of this project are the following:
 [image1]: ./examples/1.png "Visualization of the dataset"
 [image2]:  ./examples/2.png "The characteristics of the images"
 [image3]: ./examples/3.png "Distribuation"
-[image4]: ./examples/4.png "Augmentation Methods"
+[image4]: ./examples/4.png "Imporving the contrast of all images "
 
 [image5]: ./examples/S5.png "Traffic Sign 1"
 [image6]: ./examples/S6.png "Traffic Sign 2"
@@ -141,7 +141,27 @@ Then I used the pandas library to find the number of  maximum and minimum traffi
 |  training |   End of no passing by vehicles over 3.5 metric |	2010      |        Speed limit (20km/h)   |	180|
 | validation | End of no passing by vehicles over 3.5 metric | 	240       |        Speed limit (20km/h)   |	30 |
 | test |   End of no passing by vehicles over 3.5 metric | 	750        |       Speed limit (20km/h)   |	60  |
+
+
+There are three common forms of data preprocessing:
+
+1. Mean subtraction is the most common form of preprocessing. It involves subtracting the mean across every individual feature in the data, and has the geometric interpretation of centering(the cloud of data around the origin along every dimension).
+
+2-Normalization refers to normalizing the data dimensions so that they are of approximately the same scale(for example in range from 0 to 1).
+
+3-PCA and Whitening is another form of preprocessing. In this process, the data is first centered as described above. Then, we can compute the covariance matrix that tells us about the correlation structure in the data.
+
+Befor normalizing all images I converted all images to the LAB color system(L for lightness and a and b for the color opponents green–red and blue–yellow) to improve the contrast of images by using CLAHE (Contrast Limited Adaptive Histogram Equalization) from the opencv library (to only Lightness component and convert back the image to RGB). 
+
+![alt text][image4]
+
+
+
+then I normalized all the images so that they have a mean zero and equal variance (in range from 0 to 4).
+
    
+    the maximum value for each image in the dataset:  4.09443429551608
+    the minimum value for each image in the dataset:  0
 
 
 
@@ -152,17 +172,8 @@ Then I used the pandas library to find the number of  maximum and minimum traffi
 
 From the comparing histograms, we can see that both training set and validation set have similar distribution of traffic sign samples. Problem is that there is a huge variability of the distribution between class instances within the dataset,maybe we can develop augmentation techniques to equalize them.
 Because of inblancing all dataset I wanted to use augmentation methods like salt papper noise, rotation and translation methods
-![alt text][image4]
 
-There are three common forms of data preprocessing:
 
-1-Mean subtraction is the most common form of preprocessing. It involves subtracting the mean across every individual feature in the data, and has the geometric interpretation of centering the cloud of data around the origin along every dimension.
-
-2-Normalization refers to normalizing the data dimensions so that they are of approximately the same scale. 
-
-3-PCA and Whitening is another form of preprocessing. In this process, the data is first centered as described above. Then, we can compute the covariance matrix that tells us about the correlation structure in the data.
-
- Befor the nomalization all images I converted all images to the LAB color system(L for lightness and a and b for the color opponents green–red and blue–yellow) to improve the contrast of my images by using CLAHE (Contrast Limited Adaptive Histogram Equalization) from the opencv librarythen (to only Lightness component and convert back the image to RGB) then I normalized so that the data has mean zero and equal variance.
 
 
 
