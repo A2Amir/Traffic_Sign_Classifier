@@ -127,7 +127,7 @@ I was encouraged to to print several images for one label and try to pay attenti
 #### 2. Pre-processing of the dataset:
 
 
-Distribution:First, I will examine the distribution of the labels and look at the comparative distribution of each individual class in the training, validation, and test data set.
+First, I will examine the distribution of the labels and look at the comparative distribution of each individual class in the training, validation, and test data set.
 
 ![alt text][image3]
 
