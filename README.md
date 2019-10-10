@@ -107,7 +107,9 @@ After the summary section, the file segmentation.csv, which has the correspondin
   |2 |	Speed limit (50km/h)|
   |3 |	Speed limit (60km/h)|
   |4 |	Speed limit (70km/h)|
-    
+  |5 | 	Speed limit (80km/h)|
+  |6 |	End of speed limit (80km/h)|
+  |7 | 	Speed limit (100km/h)|
 
 
 #### 2. Include an exploratory visualization of the dataset.
