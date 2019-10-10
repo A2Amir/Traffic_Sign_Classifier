@@ -173,6 +173,10 @@ From the presented distribution above, we can see that both training and validat
 
 The process I did to find the final model architecture was related to the accuracy of the model, as known, one of the best archituctue in the fied of deep learing that has achieved much attention is the inception module, for this reason I used the inception modules to increase the accuracy of my model.
 
+<p align="center">
+<img src="./examples/7.PNG" width="593" height="397" alt=" the inception module" />
+  The inception module
+<p align="center">
 
 
 For visualizing the model architecture, I tried to open the tensorboard environment in the Udacity's workspace (tensorboard --logdir=logs) but I got many errors.
