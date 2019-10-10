@@ -207,7 +207,7 @@ The model architecture
 
 I chosed Adam opzimizer Adam (Adaptive Moment Estimation) as the loss function, which divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD.
 
-To measure the loss and accuracy of the validation set the evaluate(X_data, y_data) function was implemented.
+To measure the loss and accuracy of the validation set during the training phase, the evaluate(X_data, y_data) function was implemented.
 ```python
 
 def evaluate(X_data, y_data):
