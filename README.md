@@ -137,11 +137,11 @@ First, I will examine the distribution of the labels and look at the comparative
     
 Then I used the pandas library to find the number of the maximum and minimum traffic signs class in the training , validation and test dataset:
 
-   |                             The maximum sign         |        Number      |           the minimum sign  |     Number|
-   |------------------------------------------------------|---------------------|----------------------------|-----------|
-   | Training data   End of no passing by vehicles over 3.5 metric |	2010      |        Speed limit (20km/h)   |	180|
-   | Validation data End of no passing by vehicles over 3.5 metric | 	240       |        Speed limit (20km/h)   |	30 |
-   | Test data       End of no passing by vehicles over 3.5 metric | 	750        |       Speed limit (20km/h)   |	60  |
+|  Datset  |                             The maximum sign         |        Number      |           the minimum sign  |     Number|
+|--- |------------------------------------------------------|---------------------|----------------------------|-----------|
+|  training |   End of no passing by vehicles over 3.5 metric |	2010      |        Speed limit (20km/h)   |	180|
+| validation | End of no passing by vehicles over 3.5 metric | 	240       |        Speed limit (20km/h)   |	30 |
+| test |   End of no passing by vehicles over 3.5 metric | 	750        |       Speed limit (20km/h)   |	60  |
    
 
 
