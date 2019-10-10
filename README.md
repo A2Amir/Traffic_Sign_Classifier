@@ -117,14 +117,11 @@ After the summary section, the file segmentation.csv, which has the correspondin
 Below is shown some images from the dataset with the coressponding titles:
 ![alt text][image1]
 
-
-
-
-I was encouraged to to print several images for each label and try to  pay attention how the images look like. This is important because I need to know the characteristics of the images that you are using for training my model. 
+I was encouraged to to print several images for one label and try to pay attention how the images look like. This is important because I need to know the characteristics of the images that use for training the model
 ![alt text][image2]
 
-
-Now I am going to explore the distribution and take look at the comparing distribution of  each classes(training ,validation,test).
+* As seen ,the contrast of  images is bad which must be imporved.
+Now I am going to explore the distribution  and take look at the comparing distribution of  each classes(training ,validation,test).
 
 ![alt text][image3]
 
