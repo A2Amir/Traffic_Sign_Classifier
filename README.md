@@ -84,7 +84,7 @@ x_test,y_test=test['features'],test['labels']
 ```
 
 
-#### 2. Explore, summarize and visualize the data set: Below is a basic summary of the dataset provided.
+#### 2. Explore, summarize and visualize the data set: Below is provided a basic summary of the dataset.
 
 After loading the dataset, I asserted weathers the numbers of the training images and labels are equal or not.
 
@@ -171,30 +171,69 @@ From the presented distribution above, we can see that both training and validat
 
 ### 4. Design, train and test a model architecture: In this section i am going to describe what the final model architecture looks like including model type, layers, layer sizes, connectivity.
 
-The process I did to find the final model architecture was related to the accuracy of the model, as known, one of the best archituctue in the fied of deep learing that has achieved much attention is the inception module, for this reason I used the inception modules to increase the accuracy of my model.
+#### Design a model architecture:
+
+The way I did to find the final model architecture was related to the accuracy of the model, as known, one of the best archituctues in the fied of deep learing that has achieved much attention is the inception module, for this reason I used the inception modules to increase the accuracy of my model.
+
+<p align="center">
+<img src="./examples/7.PNG" alt=" the inception module" />
+<p align="center">  
+  The inception module
+<p align="center">
+<p align="center">
+
+For visualizing the model architecture, I tried to open the tensorboard environment (tensorboard --logdir=" the adress of log dir " --port 6006) and I got the below presented graph.
 
 
+<p align="center">
+<img src="./examples/6.png" alt=" the inception module" />
+<p align="center">  
+The model architecture
+<p align="center">
+<p align="center">
+  
+   |Layer| 	Description |	Input| 	Output|
+   |-----|--------------|------|-------|
+   |Inception with batch_normalization and relu  activation |	Inception3a |	(?,32,32,3) |	(?, 32, 32, 256)|
+   | Inception with batch_normalization and relu  activation |	Inception3b |	(?,32,32,256) |	(?, 32, 32, 480)|
+   | Max pooling |	 kernel: 2x2; stride:2x2; padding: Same;  | (?, 32, 32, 480)| 	(?, 16, 16, 480)|
+   | Inception with batch_normalization and relu  activation 	|Inception3c |	(?, 16, 16, 480) |	(?, 16, 16, 766)|
+   | Max pooling 	| kernel: 2x2; stride:2x2; padding: Same; |  (?, 16, 16, 766) |	(?, 8, 8, 766)|
+   | Flatten 	|Squeeze the cube into one dimension |(?,8,8,766) |(?,49024)|
+   | Fully connected with dropout |	scope:fully_1; pairwise connections between all nodes |	(?,49024) 	|(?,1024)|
+   | Fully connected with dropout	scope:fully_2;| pairwise connections between all nodes |	(?,1024)| 	(?,512)|
+   | Fully connected with dropout	scope:fully_3; |pairwise connections between all nodes 	|(?,512) |	(?,128)|
+   |Fully connected with dropout |	scope=out; pairwise connections between all nodes  |	(?,128)  |	(?,43) |
 
-For visualizing the model architecture, I tried to open the tensorboard environment in the Udacity's workspace (tensorboard --logdir=logs) but I got many errors.
+I chosed Adam opzimizer Adam (Adaptive Moment Estimation) as the loss function, which divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD.
 
-    Layer 	Description 	Input 	Output
-    Inception with batch_normalization and relu  activation 	Inception3a 	(?,32,32,3) 	(?, 32, 32, 256)
-    Inception with batch_normalization and relu  activation 	Inception3b 	(?,32,32,256) 	(?, 32, 32, 480)
-    Max pooling 	 kernel: 2x2; stride:2x2; padding: Same;                	(?, 32, 32, 480) 	(?, 16, 16, 480)
-    Inception with batch_normalization and relu  activation 	Inception3c 	(?, 16, 16, 480) 	(?, 16, 16, 766)
-    Max pooling 	 kernel: 2x2; stride:2x2; padding: Same;                	(?, 16, 16, 766) 	(?, 8, 8, 766)
-    Flatten 	Squeeze the cube into one dimension 	(?,8,8,766) 	(?,49024)
-    Fully connected with dropout 	scope:fully_1; pairwise connections between all nodes 	(?,49024) 	(?,1024)
-    Fully connected with dropout	scope:fully_2; pairwise connections between all nodes 	(?,1024) 	(?,512)
-    Fully connected with dropout	scope:fully_3; pairwise connections between all nodes 	(?,512) 	(?,128)
-    Fully connected with dropout	scope=out; pairwise connections between all nodes 	(?,128) 	(?,43)
+To measure the loss and accuracy of the validation set during the training phase, the evaluate(X_data, y_data) function was implemented.
+```python
+
+def evaluate(X_data, y_data):
+    num_examples = len(y_data)
+    total_accuracy = 0
+    total_loss=0
+    sess = tf.get_default_session()
+    for offset in range(0, num_examples, Batch_size):
+     
+        x_batch,y_batch=x_train[offset:offset+Batch_size],y_train[offset:offset+Batch_size]
+  
+        val_acc,loss = sess.run([accuracy,loss_operation], feed_dict={x: x_batch, y: y_batch, keep_prob:1.0})
+        total_accuracy += (val_acc * len(x_batch))
+        total_loss+=(loss* len(x_batch))
+
+    #print('loss: ',total_loss/num_examples)
+
+    return (total_accuracy / num_examples,total_loss/num_examples)
+
+```
+#### Train the model architecture:
+
+To train the model,the training data passed through a training pipeline which shuffles the training set before each epoch and after each epoch measures the loss and accuracy of the validation set and saves the model after training.
 
 
-
-
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
-
-To train the model,I chose these hyperparameters based my experiences that I had with the taining phase. I tried to train my model for more epochs to see if I get a better result but I relized that a batch size of 256 can lead to a faster convergence.
+I chose these hyperparameters based my experiences that I had with the taining phase. I tried to train my model for more epochs to see if I get a better result but I relized that a batch size of 256 can lead to a faster convergence.
 
 
 Hyperparameter tuning
@@ -204,17 +243,9 @@ Hyperparameter tuning
     BATCH SIZE = 256
     Dropout keep probability rate : 0.5
 
-Optimizer
 
-     I chosed Adam opzimizer Adam (Adaptive Moment Estimation), In this algorithm, we divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD
       
-Then I passed the training data through the training pipeline to train the model.
-
-Before each epoch, shuffle the training set.
-
-After each epoch, measure the loss and accuracy of the validation set.
-
-Save the model after training.
+Then 
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
