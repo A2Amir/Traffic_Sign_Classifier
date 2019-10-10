@@ -10,6 +10,7 @@ In this project, I will use deep neural networks and convolutional neural networ
 The steps of this project are the following:
 * Load the data set 
 * Explore, summarize and visualize the data set
+* Pre-processing of the dataset 
 * Design, train and test a model architecture
 * Use the model to make predictions on new images
 * Analyze the softmax probabilities of the new images
@@ -112,7 +113,6 @@ After the summary section, the file segmentation.csv, which has the correspondin
   |7 | 	Speed limit (100km/h)|
 
 
-#### 2. Include an exploratory visualization of the dataset.
 
 Below is shown some images from the dataset with the coressponding titles:
 ![alt text][image1]
@@ -120,21 +120,27 @@ Below is shown some images from the dataset with the coressponding titles:
 I was encouraged to to print several images for one label and try to pay attention how the images look like. This is important because I need to know the characteristics of the images that use for training the model
 ![alt text][image2]
 
-* As seen ,the contrast of  images is bad which must be imporved.
-Now I am going to explore the distribution  and take look at the comparing distribution of  each classes(training ,validation,test).
+* As seen,the contrast of  images is bad which must be imporved.
+
+
+
+#### 2. Pre-processing of the dataset:
+
+
+First, I will examine the distribution of the labels and look at the comparative distribution of each individual class in the training, validation, and test data set.
 
 ![alt text][image3]
 
 
 
     
-Then I used the pandas library to calculate summary statistics of the traffic signs data set:
+Then I used the pandas library to find the number of  maximum and minimum traffic sign class in the training , validation and test dataset:
 
-                                The maximum sign                  Number                 the minumu sign       Number
-                        
-    Training data   End of no passing by vehicles over 3.5 metric ... 	2010              Speed limit (20km/h)   	180
-    Validation data End of no passing by vehicles over 3.5 metric ... 	240               Speed limit (20km/h)   	30  
-    Test data       End of no passing by vehicles over 3.5 metric ... 	750               Speed limit (20km/h)   	60  
+|  Datset  |                             The maximum sign         |        Number      |           the minimum sign  |     Number|
+|--- |------------------------------------------------------|---------------------|----------------------------|-----------|
+|  training |   End of no passing by vehicles over 3.5 metric |	2010      |        Speed limit (20km/h)   |	180|
+| validation | End of no passing by vehicles over 3.5 metric | 	240       |        Speed limit (20km/h)   |	30 |
+| test |   End of no passing by vehicles over 3.5 metric | 	750        |       Speed limit (20km/h)   |	60  |
    
 
 
