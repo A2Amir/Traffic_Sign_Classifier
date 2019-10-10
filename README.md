@@ -204,9 +204,8 @@ The model architecture
    |Fully connected with dropout |	scope=out; pairwise connections between all nodes  |	(?,128)  |	(?,43) |
 
 
+I chosed Adam opzimizer Adam (Adaptive Moment Estimation) which divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD
 
-
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model,I chose these hyperparameters based my experiences that I had with the taining phase. I tried to train my model for more epochs to see if I get a better result but I relized that a batch size of 256 can lead to a faster convergence.
 
