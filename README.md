@@ -81,7 +81,7 @@ x_test,y_test=test['features'],test['labels']
 ```
 
 
-#### 2. Explore, summarize and visualize the data set: Here a basic summary of the dataset is provided.
+#### 2. Explore, summarize and visualize the data set: Below is a basic summary of the dataset provided.
 
 After loading the dataset, I asserted weathers the numbers of the training images and labels are equal or not.
 
