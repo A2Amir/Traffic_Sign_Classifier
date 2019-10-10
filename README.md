@@ -171,7 +171,7 @@ From the presented distribution above, we can see that both training and validat
 
 ### 4. Design, train and test a model architecture: In this section i am going to describe what the final model architecture looks like including model type, layers, layer sizes, connectivity.
 
-The process I did to find the final model architecture was related to the accuracy of the model, as known, one of the best archituctues in the fied of deep learing that has achieved much attention is the inception module, for this reason I used the inception modules to increase the accuracy of my model.
+* The way I did to find the final model architecture was related to the accuracy of the model, as known, one of the best archituctues in the fied of deep learing that has achieved much attention is the inception module, for this reason I used the inception modules to increase the accuracy of my model.
 
 <p align="center">
 <img src="./examples/7.PNG" alt=" the inception module" />
@@ -180,7 +180,7 @@ The process I did to find the final model architecture was related to the accura
 <p align="center">
 <p align="center">
 
-For visualizing the model architecture, I tried to open the tensorboard environment (tensorboard --logdir=" the adress of log dir " --port 6006) and I got the below presented graph.
+* For visualizing the model architecture, I tried to open the tensorboard environment (tensorboard --logdir=" the adress of log dir " --port 6006) and I got the below presented graph.
 
 
 <p align="center">
@@ -204,13 +204,13 @@ The model architecture
    |Fully connected with dropout |	scope=out; pairwise connections between all nodes  |	(?,128)  |	(?,43) |
 
 
-I chosed Adam opzimizer Adam (Adaptive Moment Estimation) as the loss function, which divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD.
+* I chosed Adam opzimizer Adam (Adaptive Moment Estimation) as the loss function, which divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD.
 
-To measure the loss and accuracy of the validation set the evaluate(X_data, y_data) function was implemented.
+* To measure the loss and accuracy of the validation set the evaluate(X_data, y_data) function was implemented.
 
-To train the model,the training data passed through a training pipeline which shuffle the training set before each epoch and after each epoch measure the loss and accuracy of the validation set and save the model after training.
+* To train the model,the training data passed through a training pipeline which shuffle the training set before each epoch and after each epoch measure the loss and accuracy of the validation set and save the model after training.
 
-I chose these hyperparameters based my experiences that I had with the taining phase. I tried to train my model for more epochs to see if I get a better result but I relized that a batch size of 256 can lead to a faster convergence.
+* I chose these hyperparameters based my experiences that I had with the taining phase. I tried to train my model for more epochs to see if I get a better result but I relized that a batch size of 256 can lead to a faster convergence.
 
 
 Hyperparameter tuning
