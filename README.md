@@ -147,15 +147,13 @@ There are three common forms of data preprocessing:
 
 1. Mean subtraction is the most common form of preprocessing. It involves subtracting the mean across every individual feature in the data, and has the geometric interpretation of centering(the cloud of data around the origin along every dimension).
 
-2-Normalization refers to normalizing the data dimensions so that they are of approximately the same scale(for example in range from 0 to 1).
+2. Normalization refers to normalizing the data dimensions so that they are of approximately the same scale(for example in range from 0 to 1).
 
-3-PCA and Whitening is another form of preprocessing. In this process, the data is first centered as described above. Then, we can compute the covariance matrix that tells us about the correlation structure in the data.
+3. PCA and Whitening is another form of preprocessing. In this process, the data is first centered as described above. Then, we can compute the covariance matrix that tells us about the correlation structure in the data.
 
 Befor normalizing all images I converted all images to the LAB color system(L for lightness and a and b for the color opponents green–red and blue–yellow) to improve the contrast of images by using CLAHE (Contrast Limited Adaptive Histogram Equalization) from the opencv library (to only Lightness component and convert back the image to RGB). 
 
 ![alt text][image4]
-
-
 
 then I normalized all the images so that they have a mean zero and equal variance (in range from 0 to 4).
 
