@@ -18,7 +18,7 @@ The steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/1.png "Visualization"
+[image1]: ./examples/1.png "Visualization of the dataset"
 [image2]:  ./examples/2.png "The characteristics of the images"
 [image3]: ./examples/3.png "Distribuation"
 [image4]: ./examples/4.png "Augmentation Methods"
@@ -114,7 +114,7 @@ After the summary section, the file segmentation.csv, which has the correspondin
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is shown some images from the dataset with the coressponding titles:
+Below is shown some images from the dataset with the coressponding titles:
 ![alt text][image1]
 
 
