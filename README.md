@@ -160,8 +160,8 @@ Befor normalizing all images I converted all images to the LAB color system(L fo
 then I normalized all the images so that they have a mean zero and equal variance (in range from 0 to 4).
 
    
-    the maximum value for each image in the dataset:  4.09443429551608
-    the minimum value for each image in the dataset:  0
+    the maximum value for each image in the dataset  3.832561342409173
+    the minimum value for each image in the dataset  0
 
 From the presented distribution above, we can see that both training and validation set have similar distribution of traffic sign samples but problem is that there is a huge variability of the distribution between class instances within the dataset,maybe we can develop augmentation techniques to equalize them. I decided to develop the augmentation methods like salt papper noise, rotation and translation methods with help of openc cv library and using Tensorflow the random_brightness and flip_left_right methods for data augmentation.
 
@@ -169,23 +169,10 @@ From the presented distribution above, we can see that both training and validat
 ![alt text][image5]
 
 
-### 4. Design, train and test a model architecture
+### 4. Design, train and test a model architecture: In this section i am going to describe what the final model architecture looks like including model type, layers, layer sizes, connectivity.
 
-#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+The process I did to find the final model architecture was related to the accuracy of the model, as known, one of the best archituctue in the fied of deep learing that has achieved much attention is the inception module, for this reason I used the inception modules to increase the accuracy of my model.
 
-
-From the comparing histograms, we can see that both training set and validation set have similar distribution of traffic sign samples. Problem is that there is a huge variability of the distribution between class instances within the dataset,maybe we can develop augmentation techniques to equalize them.
-Because of inblancing all dataset I wanted to use augmentation methods like salt papper noise, rotation and translation methods
-
-
-
-
-
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
-
-The process I did to find my solution was related to the accuracy of the model:
-
-As known, one of the best archituctue in the fied of deep learing that has achieved much attention is the inception module. for this reason I used the inception modules to increase the accuracy of my model.
 
 
 For visualizing the model architecture, I tried to open the tensorboard environment in the Udacity's workspace (tensorboard --logdir=logs) but I got many errors.
