@@ -191,17 +191,17 @@ The model architecture
 <p align="center">
   
    |Layer| 	Description |	Input| 	Output|
-   |-----|---------------|------|-------|
+   |-----|--------------|------|-------|
    |Inception with batch_normalization and relu  activation |	Inception3a |	(?,32,32,3) |	(?, 32, 32, 256)|
    | Inception with batch_normalization and relu  activation |	Inception3b |	(?,32,32,256) |	(?, 32, 32, 480)|
-   | Max pooling |	 kernel: 2x2; stride:2x2; padding: Same;  |              	(?, 32, 32, 480)| 	(?, 16, 16, 480)|
+   | Max pooling |	 kernel: 2x2; stride:2x2; padding: Same;  | (?, 32, 32, 480)| 	(?, 16, 16, 480)|
    | Inception with batch_normalization and relu  activation 	|Inception3c |	(?, 16, 16, 480) |	(?, 16, 16, 766)|
-   | Max pooling 	| kernel: 2x2; stride:2x2; padding: Same; |           (?, 16, 16, 766) |	(?, 8, 8, 766)|
-   | Flatten 	|Squeeze the cube into one dimension |	(?,8,8,766) 	|(?,49024)|
+   | Max pooling 	| kernel: 2x2; stride:2x2; padding: Same; |  (?, 16, 16, 766) |	(?, 8, 8, 766)|
+   | Flatten 	|Squeeze the cube into one dimension |(?,8,8,766) |(?,49024)|
    | Fully connected with dropout |	scope:fully_1;| pairwise connections between all nodes |	(?,49024) 	|(?,1024)|
    | Fully connected with dropout	scope:fully_2;| pairwise connections between all nodes |	(?,1024)| 	(?,512)|
    | Fully connected with dropout	scope:fully_3; |pairwise connections between all nodes 	|(?,512) |	(?,128)|
-    Fully connected with dropout	scope=out; pairwise connections between all nodes 	(?,128) 	(?,43)
+   |Fully connected with dropout |	scope=out;  |pairwise connections between all nodes  |	(?,128)  |	(?,43) |
 
 
 
