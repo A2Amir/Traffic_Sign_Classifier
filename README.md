@@ -230,7 +230,7 @@ def evaluate(X_data, y_data):
 ```
 #### Train the model architecture:
 
-To train the model,the training data passed through a training pipeline which shuffle the training set before each epoch and after each epoch measure the loss and accuracy of the validation set and save the model after training.
+To train the model,the training data passed through a training pipeline which shuffles the training set before each epoch and after each epoch measures the loss and accuracy of the validation set and saves the model after training.
 
 
 I chose these hyperparameters based my experiences that I had with the taining phase. I tried to train my model for more epochs to see if I get a better result but I relized that a batch size of 256 can lead to a faster convergence.
