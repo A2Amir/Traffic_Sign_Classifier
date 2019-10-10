@@ -208,10 +208,30 @@ The model architecture
 I chosed Adam opzimizer Adam (Adaptive Moment Estimation) as the loss function, which divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD.
 
 To measure the loss and accuracy of the validation set the evaluate(X_data, y_data) function was implemented.
+```python
 
-#### train the model architecture:
+def evaluate(X_data, y_data):
+    num_examples = len(y_data)
+    total_accuracy = 0
+    total_loss=0
+    sess = tf.get_default_session()
+    for offset in range(0, num_examples, Batch_size):
+     
+        x_batch,y_batch=x_train[offset:offset+Batch_size],y_train[offset:offset+Batch_size]
+  
+        val_acc,loss = sess.run([accuracy,loss_operation], feed_dict={x: x_batch, y: y_batch, keep_prob:1.0})
+        total_accuracy += (val_acc * len(x_batch))
+        total_loss+=(loss* len(x_batch))
+
+    #print('loss: ',total_loss/num_examples)
+
+    return (total_accuracy / num_examples,total_loss/num_examples)
+
+```
+#### Train the model architecture:
 
 To train the model,the training data passed through a training pipeline which shuffle the training set before each epoch and after each epoch measure the loss and accuracy of the validation set and save the model after training.
+
 
 I chose these hyperparameters based my experiences that I had with the taining phase. I tried to train my model for more epochs to see if I get a better result but I relized that a batch size of 256 can lead to a faster convergence.
 
