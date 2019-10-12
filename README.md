@@ -245,12 +245,12 @@ Hyperparameter tuning
 
 
       
-To describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
-
+To describe how the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93 was,I am going to include below  the steps I took to get to the final solution and why I chose those steps.
      
- 1-I tried data augmentation  which didn't help me 
- 2-I Added dropout regularization at the end of each fully connected layer and achieved improvements, 
- 3-Batch normalization is used after the first convolutional layer.
+ 1. I tried data augmentation  which didn't help me .
+ 2. I useed 
+ 2. I Added dropout regularization at the end of each fully connected layer and achieved improvements. 
+ 3. Batch normalization is used after the first convolutional layer.
  
 After 5 epochs I got a validation accuracy  1.0  and Loss of  0.03 and my final model was constructed, It took me about quarter  hour  to train on 5 iterations. After quarter hour, I got about  1.0   accuracy on the validation set with learning_rate=0.0003
 
