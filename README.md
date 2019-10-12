@@ -245,10 +245,10 @@ Hyperparameter tuning
 
 
       
-To describe how the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93 was,I am going to include below  the steps I took to get to the final solution and why I chose those steps.
+To describe how the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93 was,I am going to include below the steps I took to get to the final solution:
      
- 1. I tried data augmentation  which didn't help me .
- 2. I useed 
+ 1. I tried data augmentation which didn't help me .
+ 2. I initialized all variables with xavier_initializer() function which has shows better advantage in the field of convergence. 
  2. I Added dropout regularization at the end of each fully connected layer and achieved improvements. 
  3. Batch normalization is used after the first convolutional layer.
  
