@@ -252,11 +252,9 @@ To describe how the approach taken for finding a solution and getting the valida
  2. I Added dropout regularization at the end of each fully connected layer and achieved improvements. 
  3. Batch normalization is used after the first convolutional layer.
  
-the final model was constructed and it took me about quarter  hour  to train on 5 iterations, after 5 epochs I got a validation accuracy  1.0  and a loss of  0.03 with learning_rate=0.0003
+The final model was constructed and it took me about quarter  hour  to train on 5 iterations, after 5 epochs I got (with learning_rate=0.0003):
 
-The final results are:
-
-    Train Accuracy 0.999655162505
+    Train Accuracy 0.999655162505T
     Validation Accuracy 1.04489795918
     Test Accuracy 1.01322248614
     
