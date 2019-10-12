@@ -250,7 +250,7 @@ To describe how the approach taken for finding a solution and getting the valida
  1. I tried data augmentation which didn't help me .
  2. I initialized all variables with xavier_initializer() function which has the better advantage in the field of convergence. 
  2. I Added dropout regularization at the end of each fully connected layer and achieved improvements. 
- 3. Batch normalization is used after the first convolutional layer.
+ 3. Batch normalization is used after the each Inception modulel layer.
  
 The final model was constructed and it took me about quarter  hour  to train on 5 iterations, after 5 epochs I got (with learning_rate=0.0003):
 
