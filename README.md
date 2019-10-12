@@ -245,7 +245,7 @@ Hyperparameter tuning
 
 
       
-To describe how the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93 was,I am going to include below the steps I took to get to the final solution:
+To describe how the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93, I am going to include below the steps I took to get to the final solution:
      
  1. I tried data augmentation which didn't help me .
  2. I initialized all variables with xavier_initializer() function which has the better advantage in the field of convergence. 
