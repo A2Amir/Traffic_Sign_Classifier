@@ -1,5 +1,5 @@
 # **Traffic Sign Recognition** 
-
+tf.layers.batch_normalization(incep2)
 In this project, I will use deep neural networks and convolutional neural networks to classify traffic signs. We will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 
 
@@ -245,20 +245,16 @@ Hyperparameter tuning
 
 
       
-Then 
-
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
-
+To describe how the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93, I am going to include below the steps I took to get to the final solution:
      
- 1-I tried data augmentation  which didn't help me 
- 2-I Added dropout regularization at the end of each fully connected layer and achieved improvements, 
- 3-Batch normalization is used after the first convolutional layer.
+ 1. I tried data augmentation which didn't help me .
+ 2. I initialized all variables with xavier_initializer() function which has the better advantage in the field of convergence. 
+ 2. I Added dropout regularization at the end of each fully connected layer and achieved improvements. 
+ 3. Batch normalization is used after the each Inception modulel layer.
  
-After 5 epochs I got a validation accuracy  1.0  and Loss of  0.03 and my final model was constructed, It took me about quarter  hour  to train on 5 iterations. After quarter hour, I got about  1.0   accuracy on the validation set with learning_rate=0.0003
+The final model was constructed and it took me about quarter  hour  to train on 5 iterations, after 5 epochs I got (with learning_rate=0.0003):
 
-The final results are:
-
-    Train Accuracy 0.999655162505
+    Train Accuracy 0.999655162505T
     Validation Accuracy 1.04489795918
     Test Accuracy 1.01322248614
     
