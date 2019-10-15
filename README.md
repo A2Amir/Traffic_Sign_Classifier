@@ -1,5 +1,4 @@
 # **Traffic Sign Recognition** 
-tf.layers.batch_normalization(incep2)
 In this project, I will use deep neural networks and convolutional neural networks to classify traffic signs. We will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 
 
