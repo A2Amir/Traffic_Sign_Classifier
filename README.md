@@ -184,7 +184,7 @@ The way I did to find the final model architecture was related to the accuracy o
  
 I chosed Adam opzimizer Adam (Adaptive Moment Estimation) as the loss function, which divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD.
 
-For visualizing the model architecture, I tried to open the tensorboard environment (tensorboard --logdir=" the adress of log dir " --port 6006) and I got the below presented graph.
+For visualizing the model architecture, I tried to open the tensorboard environment (tensorboard --logdir=" the adress of the save path  " --port 6006) and I got the below presented graph.
 
 
 <p align="center">
