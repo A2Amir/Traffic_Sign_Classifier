@@ -174,12 +174,15 @@ From the presented distribution above, we can see that both training and validat
 
 The way I did to find the final model architecture was related to the accuracy of the model, as known, one of the best archituctues in the fied of deep learing that has achieved much attention is the inception module, for this reason I used the inception modules to increase the accuracy of my model.
 
+
 <p align="center">
 <img src="./examples/7.PNG" alt=" the inception module" />
 <p align="center">  
   The inception module
 <p align="center">
 <p align="center">
+ 
+I chosed Adam opzimizer Adam (Adaptive Moment Estimation) as the loss function, which divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD.
 
 For visualizing the model architecture, I tried to open the tensorboard environment (tensorboard --logdir=" the adress of log dir " --port 6006) and I got the below presented graph.
 
@@ -204,7 +207,6 @@ The model architecture
    | Fully connected with dropout	scope:fully_3; |pairwise connections between all nodes 	|(?,512) |	(?,128)|
    |Fully connected with dropout |	scope=out; pairwise connections between all nodes  |	(?,128)  |	(?,43) |
 
-I chosed Adam opzimizer Adam (Adaptive Moment Estimation) as the loss function, which divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD.
 
 To measure the loss and accuracy of the validation set during the training phase, the evaluate(X_data, y_data) function was implemented.
 ```python
