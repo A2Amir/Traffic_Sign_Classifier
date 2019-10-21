@@ -13,9 +13,7 @@ The steps of this project are the following:
 * 4.  Design, train and test a model architecture
 * 5.  Use the model to make predictions on new images
 * 6.  Analyze the softmax probabilities of the new images
-* 7.  Summarize the results with a written report
-
-
+* 7.  Visualize the Neural Network's State with Test Images
 [//]: # (Image References)
 
 [image1]: ./examples/1.png "Visualization of the dataset"
