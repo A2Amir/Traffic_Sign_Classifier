@@ -271,7 +271,19 @@ Here I am going to predict the Sign Type for the clear Images:
 <p align="center">
 <img src="./examples/8.png" alt="predict the Sign Type for the clear Images" />
 <p align="center"> 
-  
+---
+Below are presented the noisy Images and the corresponding prediction:
+
+Load and Output the noisy Images:
+<p align="center">
+<img src="./examples/11.png" alt="the pictures without Noise" />
+<p align="center">  
+
+The corresponding prediction for the noisy Images:
+<p align="center">
+<img src="./examples/12.png" alt="the pictures without Noise" />
+<p align="center">  
+
   
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
