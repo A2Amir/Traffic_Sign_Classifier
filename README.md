@@ -285,7 +285,8 @@ The corresponding prediction for the noisy Images:
 <p align="center">  
 
   
-### 6. Analyze the softmax probabilities of the new images: 
+### 6. Analyze the softmax probabilities of the new images: describe how certain the model is when predicting on each of the sixteen new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
+
 In this section to discuss the model's predictions on these new traffic signs, for each of the new images(clear images and noisy images), print out the model's softmax probabilities to show the certainty of the model's predictions (limit the output to the top 5 probabilities for each image). tf.nn.top_k could prove helpful here.
 
 The below th result indices  demonstrate how tf.nn.top_k can be used to find the top k predictions for each image.
@@ -328,20 +329,6 @@ The below th result indices  demonstrate how tf.nn.top_k can be used to find the
 
 
 
-
-
-
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
-
-Predict the Sign Type for the clear Images!
-[alt text][image19]
-
-
-Predict the Sign Type for the noisy Images!
-[alt text][image20]
-
-
-
 ### 7.  Visualize the Neural Network's State with Test Images
 Provided the function code that allows us to get the visualization output of any Tensorflow weight layer we want. The inputs to the function should be a stimuli image, one used during training or a new one you provided, and then the Tensorflow variable name that represents the layer's state during the training process.The result of the first cinvolutional layer is presented below.
 
@@ -353,6 +340,5 @@ Provided the function code that allows us to get the visualization output of any
 </figure>
 
 
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
