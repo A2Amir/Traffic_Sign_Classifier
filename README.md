@@ -259,7 +259,7 @@ The final model was constructed and it took me about quarter  hour  to train on 
       Validation Accuracy 0.9417233560361019
       Test Accuracy 0.9375296910603841
     
-### 4.  Use the model to make predictions on new images
+### 5.  Use the model to make predictions on new images
 
 To give myself more insight into how your model is working,I downloaded 14 pictures of traffic signs from the web (6 pictures without Noise and 8 noisy pictures) and use your model to predict the traffic sign type. you may find signnames.csv useful as it contains mappings from the class id (integer) to the actual sign name.
 
@@ -285,45 +285,46 @@ The corresponding prediction for the noisy Images:
 <p align="center">  
 
   
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+### 6. Analyze the softmax probabilities of the new images: 
+In this section to discuss the model's predictions on these new traffic signs, for each of the new images(clear images and noisy images), print out the model's softmax probabilities to show the certainty of the model's predictions (limit the output to the top 5 probabilities for each image). tf.nn.top_k could prove helpful here.
 
-The example below demonstrates how tf.nn.top_k can be used to find the top k predictions for each image.
-Here are the result Indices of my predictions:
-The top five softmax probabilities of the predictions on the captured images are outputted.
+The below th result indices  demonstrate how tf.nn.top_k can be used to find the top k predictions for each image.
+
+**The top five softmax probabilities of the clear image's predictions are outputted.**
 
 
+      ------------------------------------------------------------
+    The label of the image 0  is 1 which has the corresponding predictions of  [[1 0 2 3 4]] 
     ------------------------------------------------------------
-    The label of the image:0  is 30 which has the corresponding predictions of  [[28 20 30  6 11]] 
+    The label of the image 1  is 30 which has the corresponding predictions of  [[11  0  1  2  3]] 
     ------------------------------------------------------------
-    The label of the image:1  is 1 which has the corresponding predictions of  [[28 20 30  6 11]] 
+    The label of the image 2  is 8 which has the corresponding predictions of  [[29  0  1  2  3]] 
     ------------------------------------------------------------
-    The label of the image:2  is 31 which has the corresponding predictions of  [[28 20 30  6 11]] 
+    The label of the image 3  is 31 which has the corresponding predictions of  [[24 28 30 20  0]] 
     ------------------------------------------------------------
-    The label of the image:3  is 29 which has the corresponding predictions of  [[28 20 30  6 11]] 
+    The label of the image 4  is 29 which has the corresponding predictions of  [[29  0  1  2  3]] 
     ------------------------------------------------------------
-    The label of the image:4  is 11 which has the corresponding predictions of  [[28 20 30  6 11]] 
-    ------------------------------------------------------------
-    The label of the image:5  is 8 which has the corresponding predictions of  [[28 20 30  6 11]] 
+    The label of the image 5  is 11 which has the corresponding predictions of  [[9 0 1 2 3]] 
 
     
-    for nisy images
+**The top five softmax probabilities of the noisy image's predictions are outputted.**
     
     ------------------------------------------------------------
-    The label of the image:0  is Pedestrians which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 0  is 0 which has the corresponding predictions of  [[0 1 4 2 3]] 
     ------------------------------------------------------------
-    The label of the image:1  is Speed limit (30km/h) which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 1  is 0 which has the corresponding predictions of  [[0 1 2 3 4]] 
     ------------------------------------------------------------
-    The label of the image:2  is Road work which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 2  is 1 which has the corresponding predictions of  [[1 0 2 3 4]] 
     ------------------------------------------------------------
-    The label of the image:3  is Speed limit (30km/h) which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 3  is 1 which has the corresponding predictions of  [[ 5  2  7 15  0]] 
     ------------------------------------------------------------
-    The label of the image:4  is Children crossing which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 4  is 23 which has the corresponding predictions of  [[28 29 24 20 30]] 
     ------------------------------------------------------------
-    The label of the image:5  is Slippery road which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 5  is 25 which has the corresponding predictions of  [[30 28  0  1  2]] 
     ------------------------------------------------------------
-    The label of the image:6  is Speed limit (20km/h) which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 6  is 27 which has the corresponding predictions of  [[27  0  1  2  3]] 
     ------------------------------------------------------------
-    The label of the image:7  is Speed limit (20km/h) which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 7  is 28 which has the corresponding predictions of  [[30  0  1  2  3]] 
 
 
 
