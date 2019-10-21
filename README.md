@@ -1,5 +1,5 @@
 # **Traffic Sign Recognition** 
-In this project, I will use deep neural networks and convolutional neural networks to classify traffic signs. We will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
+In this project, I will use deep neural networks and convolutional neural networks to classify traffic signs. I will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, I will then try out your model on images of German traffic signs that you find on the web.
 
 
 ---
@@ -7,13 +7,14 @@ In this project, I will use deep neural networks and convolutional neural networ
 **Build a Traffic Sign Recognition Project**
 
 The steps of this project are the following:
-* Load the data set 
-* Explore, summarize and visualize the data set
-* Pre-processing of the dataset 
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
+* 1.  Load the data set 
+* 2.  Explore, summarize and visualize the data set
+* 3.  Pre-processing of the dataset 
+* 4.  Design, train and test a model architecture
+* 5.  Use the model to make predictions on new images
+* 6.  Analyze the softmax probabilities of the new images
+* 7.  Visualize the Neural Network's State with Test Images
+
 
 
 [//]: # (Image References)
@@ -125,7 +126,7 @@ I was encouraged to to print several images for one label and try to pay attenti
 
 
 
-#### 2. Pre-processing of the dataset:
+#### 3. Pre-processing of the dataset:
 
 
 First, I will examine the distribution of the labels and look at the comparative distribution of the class instances in the training, validation, and test data set.
@@ -174,14 +175,17 @@ From the presented distribution above, we can see that both training and validat
 
 The way I did to find the final model architecture was related to the accuracy of the model, as known, one of the best archituctues in the fied of deep learing that has achieved much attention is the inception module, for this reason I used the inception modules to increase the accuracy of my model.
 
+
 <p align="center">
 <img src="./examples/7.PNG" alt=" the inception module" />
 <p align="center">  
   The inception module
 <p align="center">
 <p align="center">
+ 
+I chosed Adam opzimizer Adam (Adaptive Moment Estimation) as the loss function, which divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD.
 
-For visualizing the model architecture, I tried to open the tensorboard environment (tensorboard --logdir=" the adress of log dir " --port 6006) and I got the below presented graph.
+For visualizing the model architecture, I tried to open the tensorboard environment (tensorboard --logdir=" the adress of the save path  " --port 6006) and I got the below presented graph.
 
 
 <p align="center">
@@ -204,7 +208,6 @@ The model architecture
    | Fully connected with dropout	scope:fully_3; |pairwise connections between all nodes 	|(?,512) |	(?,128)|
    |Fully connected with dropout |	scope=out; pairwise connections between all nodes  |	(?,128)  |	(?,43) |
 
-I chosed Adam opzimizer Adam (Adaptive Moment Estimation) as the loss function, which divide the learning rate for a weight by a running average of the magnitudes of recent gradients for that weight. This helps in faster gradient descent and it is more accurate than SGD and GD.
 
 To measure the loss and accuracy of the validation set during the training phase, the evaluate(X_data, y_data) function was implemented.
 ```python
@@ -238,7 +241,7 @@ I chose these hyperparameters based my experiences that I had with the taining p
 Hyperparameter tuning
 
     LEARNING RATE = 0.0003
-    EPOCHS = 5
+    EPOCHS = 10
     BATCH SIZE = 256
     Dropout keep probability rate : 0.5
 
@@ -246,94 +249,99 @@ Hyperparameter tuning
       
 To describe how the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93, I am going to include below the steps I took to get to the final solution:
      
- 1. I tried data augmentation which didn't help me .
- 2. I initialized all variables with xavier_initializer() function which has the better advantage in the field of convergence. 
- 2. I Added dropout regularization at the end of each fully connected layer and achieved improvements. 
- 3. Batch normalization is used after the each Inception modulel layer.
+ 1. Trying data augmentation which didn't help me .
+ 2. Initializing all variables with xavier_initializer() function which has the better advantage in the field of convergence. 
+ 3. Adding dropout regularization at the end of each fully connected layer and achieved improvements. 
+ 4. Batch normalization is used after the each Inception modulel layer.
  
-The final model was constructed and it took me about quarter  hour  to train on 5 iterations, after 5 epochs I got (with learning_rate=0.0003):
+The final model was constructed and it took me about quarter  hour  to train on 10 iterations, after that I measured the loss and accuracy of the Training Validation and Test dataset and I got (with learning_rate=0.0003):
 
-    Train Accuracy 0.999655162505T
-    Validation Accuracy 1.04489795918
-    Test Accuracy 1.01322248614
+      Train Accuracy 0.9965516250466967
+      Validation Accuracy 0.9417233560361019
+      Test Accuracy 0.9375296910603841
     
-### Test a Model on New Images
+### 5.  Use the model to make predictions on new images
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+To give myself more insight into how your model is working,I downloaded 14 pictures of traffic signs from the web (6 pictures without Noise and 8 noisy pictures) and use your model to predict the traffic sign type. you may find signnames.csv useful as it contains mappings from the class id (integer) to the actual sign name.
 
-Here are six German traffic signs that I found on the web:
+Here are the pictures without Noise that I found on the web:
+<p align="center">
+<img src="./examples/8.png" alt="the pictures without Noise" />
+<p align="center">  
+Here I am going to predict the Sign Type for the clear Images:
+<p align="center">
+<img src="./examples/8.png" alt="predict the Sign Type for the clear Images" />
+<p align="center"> 
+  
+---
+  
+Below are presented the noisy Images and the corresponding prediction:
 
-![alt text][image5] ![alt text][image7] ![alt text][image9] 
-![alt text][image6] ![alt text][image8] ![alt text][image10]
- 
- Here are six noisy traffic signs that I found on the web:
+Load and Output the noisy Images:
+<p align="center">
+<img src="./examples/11.png" alt="the pictures without Noise" />
+<p align="center">  
 
-![alt text][image11] ![alt text][image12] ![alt text][image13] 
-![alt text][image14] ![alt text][image15] ![alt text][image16]
-![alt text][image17] ![alt text][image18]
+The corresponding prediction for the noisy Images:
+<p align="center">
+<img src="./examples/12.png" alt="the pictures without Noise" />
+<p align="center">  
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+  
+### 6. Analyze the softmax probabilities of the new images: describe how certain the model is when predicting on each of the sixteen new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
 
-The example below demonstrates how tf.nn.top_k can be used to find the top k predictions for each image.
-Here are the result Indices of my predictions:
-The top five softmax probabilities of the predictions on the captured images are outputted.
+In this section to discuss the model's predictions on these new traffic signs, for each of the new images(clear images and noisy images), print out the model's softmax probabilities to show the certainty of the model's predictions (limit the output to the top 5 probabilities for each image). tf.nn.top_k could prove helpful here.
+
+The below th result indices  demonstrate how tf.nn.top_k can be used to find the top k predictions for each image.
+
+**The top five softmax probabilities of the clear image's predictions are outputted.**
 
 
+      ------------------------------------------------------------
+    The label of the image 0  is 1 which has the corresponding predictions of  [[1 0 2 3 4]] 
     ------------------------------------------------------------
-    The label of the image:0  is 30 which has the corresponding predictions of  [[28 20 30  6 11]] 
+    The label of the image 1  is 30 which has the corresponding predictions of  [[11  0  1  2  3]] 
     ------------------------------------------------------------
-    The label of the image:1  is 1 which has the corresponding predictions of  [[28 20 30  6 11]] 
+    The label of the image 2  is 8 which has the corresponding predictions of  [[29  0  1  2  3]] 
     ------------------------------------------------------------
-    The label of the image:2  is 31 which has the corresponding predictions of  [[28 20 30  6 11]] 
+    The label of the image 3  is 31 which has the corresponding predictions of  [[24 28 30 20  0]] 
     ------------------------------------------------------------
-    The label of the image:3  is 29 which has the corresponding predictions of  [[28 20 30  6 11]] 
+    The label of the image 4  is 29 which has the corresponding predictions of  [[29  0  1  2  3]] 
     ------------------------------------------------------------
-    The label of the image:4  is 11 which has the corresponding predictions of  [[28 20 30  6 11]] 
-    ------------------------------------------------------------
-    The label of the image:5  is 8 which has the corresponding predictions of  [[28 20 30  6 11]] 
+    The label of the image 5  is 11 which has the corresponding predictions of  [[9 0 1 2 3]] 
 
     
-    for nisy images
+**The top five softmax probabilities of the noisy image's predictions are outputted.**
     
     ------------------------------------------------------------
-    The label of the image:0  is Pedestrians which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 0  is 0 which has the corresponding predictions of  [[0 1 4 2 3]] 
     ------------------------------------------------------------
-    The label of the image:1  is Speed limit (30km/h) which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 1  is 0 which has the corresponding predictions of  [[0 1 2 3 4]] 
     ------------------------------------------------------------
-    The label of the image:2  is Road work which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 2  is 1 which has the corresponding predictions of  [[1 0 2 3 4]] 
     ------------------------------------------------------------
-    The label of the image:3  is Speed limit (30km/h) which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 3  is 1 which has the corresponding predictions of  [[ 5  2  7 15  0]] 
     ------------------------------------------------------------
-    The label of the image:4  is Children crossing which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 4  is 23 which has the corresponding predictions of  [[28 29 24 20 30]] 
     ------------------------------------------------------------
-    The label of the image:5  is Slippery road which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 5  is 25 which has the corresponding predictions of  [[30 28  0  1  2]] 
     ------------------------------------------------------------
-    The label of the image:6  is Speed limit (20km/h) which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 6  is 27 which has the corresponding predictions of  [[27  0  1  2  3]] 
     ------------------------------------------------------------
-    The label of the image:7  is Speed limit (20km/h) which has the corresponding predictions of  [[13  0  1  2  3]] 
+    The label of the image 7  is 28 which has the corresponding predictions of  [[30  0  1  2  3]] 
 
 
 
-
-
-
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
-
-Predict the Sign Type for the clear Images!
-[alt text][image19]
-
-
-Predict the Sign Type for the noisy Images!
-[alt text][image20]
-
-
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
+### 7.  Visualize the Neural Network's State with Test Images
 Provided the function code that allows us to get the visualization output of any Tensorflow weight layer we want. The inputs to the function should be a stimuli image, one used during training or a new one you provided, and then the Tensorflow variable name that represents the layer's state during the training process.The result of the first cinvolutional layer is presented below.
-![alt text][image21]
+
+<figure>
+ <img src="./examples/13.png" alt="Combined Image" />
+ <figcaption>
+ <p></p> 
+ </figcaption>
+</figure>
 
 
-
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
