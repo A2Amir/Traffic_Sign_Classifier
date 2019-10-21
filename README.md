@@ -261,19 +261,13 @@ The final model was constructed and it took me about quarter  hour  to train on 
     
 ### 4.  Use the model to make predictions on new images
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+To give myself more insight into how your model is working,I downloaded 14 pictures of traffic signs from the web (6 pictures without Noise and 8 noisy pictures) and use your model to predict the traffic sign type. you may find signnames.csv useful as it contains mappings from the class id (integer) to the actual sign name.
 
-Here are six German traffic signs that I found on the web:
-
-![alt text][image5] ![alt text][image7] ![alt text][image9] 
-![alt text][image6] ![alt text][image8] ![alt text][image10]
- 
- Here are six noisy traffic signs that I found on the web:
-
-![alt text][image11] ![alt text][image12] ![alt text][image13] 
-![alt text][image14] ![alt text][image15] ![alt text][image16]
-![alt text][image17] ![alt text][image18]
-
+Here are the pictures without Noise that I found on the web:
+<p align="center">
+<img src="./examples/8.png" alt="the pictures without Noise" />
+<p align="center">  
+  
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 The example below demonstrates how tf.nn.top_k can be used to find the top k predictions for each image.
