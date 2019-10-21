@@ -336,7 +336,7 @@ The below th result indices  demonstrate how tf.nn.top_k can be used to find the
 Provided the function code that allows us to get the visualization output of any Tensorflow weight layer we want. The inputs to the function should be a stimuli image, one used during training or a new one you provided, and then the Tensorflow variable name that represents the layer's state during the training process.The result of the first cinvolutional layer is presented below.
 
 <figure>
- <img src="./examples/13.png" alt="Combined Image" />
+ <img src="./examples/13.PNG" alt="Combined Image" />
  <figcaption>
  <p></p> 
  </figcaption>
