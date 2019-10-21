@@ -7,13 +7,13 @@ In this project, I will use deep neural networks and convolutional neural networ
 **Build a Traffic Sign Recognition Project**
 
 The steps of this project are the following:
-* Load the data set 
-* Explore, summarize and visualize the data set
-* Pre-processing of the dataset 
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
+* 1.  Load the data set 
+* 2.  Explore, summarize and visualize the data set
+* 3.  Pre-processing of the dataset 
+* 4.  Design, train and test a model architecture
+* 5.  Use the model to make predictions on new images
+* 6.  Analyze the softmax probabilities of the new images
+* 7.  Summarize the results with a written report
 
 
 [//]: # (Image References)
@@ -125,7 +125,7 @@ I was encouraged to to print several images for one label and try to pay attenti
 
 
 
-#### 2. Pre-processing of the dataset:
+#### 3. Pre-processing of the dataset:
 
 
 First, I will examine the distribution of the labels and look at the comparative distribution of the class instances in the training, validation, and test data set.
@@ -240,7 +240,7 @@ I chose these hyperparameters based my experiences that I had with the taining p
 Hyperparameter tuning
 
     LEARNING RATE = 0.0003
-    EPOCHS = 5
+    EPOCHS = 10
     BATCH SIZE = 256
     Dropout keep probability rate : 0.5
 
@@ -253,13 +253,13 @@ To describe how the approach taken for finding a solution and getting the valida
  3. Adding dropout regularization at the end of each fully connected layer and achieved improvements. 
  4. Batch normalization is used after the each Inception modulel layer.
  
-The final model was constructed and it took me about quarter  hour  to train on 5 iterations, after 5 epochs I got (with learning_rate=0.0003):
+The final model was constructed and it took me about quarter  hour  to train on 10 iterations, after that I measured the loss and accuracy of the Training Validation and Test dataset and I got (with learning_rate=0.0003):
 
-    Train Accuracy 0.999655162505T
-    Validation Accuracy 1.04489795918
-    Test Accuracy 1.01322248614
+      Train Accuracy 0.9965516250466967
+      Validation Accuracy 0.9417233560361019
+      Test Accuracy 0.9375296910603841
     
-### Test a Model on New Images
+### 4.  Use the model to make predictions on new images
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
