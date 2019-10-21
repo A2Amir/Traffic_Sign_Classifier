@@ -271,7 +271,9 @@ Here I am going to predict the Sign Type for the clear Images:
 <p align="center">
 <img src="./examples/8.png" alt="predict the Sign Type for the clear Images" />
 <p align="center"> 
+  
 ---
+  
 Below are presented the noisy Images and the corresponding prediction:
 
 Load and Output the noisy Images:
