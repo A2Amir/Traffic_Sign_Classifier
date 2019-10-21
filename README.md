@@ -14,6 +14,9 @@ The steps of this project are the following:
 * 5.  Use the model to make predictions on new images
 * 6.  Analyze the softmax probabilities of the new images
 * 7.  Visualize the Neural Network's State with Test Images
+
+
+
 [//]: # (Image References)
 
 [image1]: ./examples/1.png "Visualization of the dataset"
